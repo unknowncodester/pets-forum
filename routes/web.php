@@ -18,3 +18,4 @@ Route::get('/', function () {
 
 Route::get('pets', 'Pets@index');
 Route::get('pets/{id}', 'Pets@show');
+Route::post('pets', 'Pets@store');
