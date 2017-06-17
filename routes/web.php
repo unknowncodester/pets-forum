@@ -16,6 +16,6 @@ Route::get('/', function () {
 });
 
 
-Route::get('pets', 'Pets@index');
-Route::get('pets/{id}', 'Pets@show');
-Route::post('pets', 'Pets@store');
+Route::get('teams', 'Team@index');
+Route::get('teams/{id}', 'Team@show');
+Route::post('teams', 'Team@store');
