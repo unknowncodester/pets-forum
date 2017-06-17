@@ -15,7 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+// teams
 Route::get('teams', 'Team@index');
 Route::get('teams/{id}', 'Team@show');
 Route::post('teams', 'Team@store');
+
+// fixtures
+Route::get('fixtures', 'Fixture@index');
+Route::get('fixtures/{id}', 'Fixture@show');
