@@ -10,14 +10,22 @@ class Team extends Controller
 {
     public function index()
     {
-        $teams = DB::table('teams')->get();
-        return json_encode($teams);
+        $teams = DB::table('teams')
+            ->get();
+
+        return response()
+            ->json(['data' => $teams], 200);
     }
 
     public function show($id)
     {
-        $team = DB::table('teams')->where('uid', $id)->get()->first();
-        return json_encode($team);
+        $team = DB::table('teams')
+            ->where('id', $id)
+            ->get()
+            ->first();
+
+        return response()
+            ->json(['data' => $team], 200);
     }
 
     public function store(Request $request)
@@ -27,11 +35,15 @@ class Team extends Controller
         ]);
 
         if ($validator->fails()) {
-            return response($validator->errors()->all(), 400);
+            return response()
+                ->json($validator->errors()->all(), 400);
         }
 
-        DB::table('teams')->insert(
-            $request->all()
+        DB::table('teams')
+            ->insert($request->all()
         );
+
+        return response()
+            ->json(['data'=>''], 201);
     }
 }

@@ -10,24 +10,26 @@ class Fixture extends Controller
     public function index()
     {
         $teams = DB::table('fixtures')
-            ->join('teams as home', 'home.uid', '=', 'fixtures.home_team')
-            ->join('teams as away', 'away.uid', '=', 'fixtures.away_team')
-            ->select('fixtures.uid', 'home.name as home_team', 'away.name as away_team')
+            ->join('teams as home', 'home.id', '=', 'fixtures.home_team')
+            ->join('teams as away', 'away.id', '=', 'fixtures.away_team')
+            ->select('fixtures.id', 'home.name as home_team', 'away.name as away_team')
             ->get();
 
-        return json_encode($teams);
+        return response()
+            ->json(['data' => $teams], 200);
     }
 
     public function show($id)
     {
-        $teams = DB::table('fixtures')
-            ->join('teams as home', 'home.uid', '=', 'fixtures.home_team')
-            ->join('teams as away', 'away.uid', '=', 'fixtures.away_team')
-            ->select('fixtures.uid', 'home.name as home_team', 'away.name as away_team')
-            ->where('fixtures.uid', $id)
+        $team = DB::table('fixtures')
+            ->join('teams as home', 'home.id', '=', 'fixtures.home_team')
+            ->join('teams as away', 'away.id', '=', 'fixtures.away_team')
+            ->select('fixtures.id', 'home.name as home_team', 'away.name as away_team')
+            ->where('fixtures.id', $id)
             ->get()
             ->first();
 
-        return json_encode($teams);
+        return response()
+            ->json(['data' => $team], 200);
     }
 }

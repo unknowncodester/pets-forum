@@ -24,15 +24,17 @@ class FixtureTest extends TestCase
     {
         $response = $this->json('get', '/fixtures');
         $response->assertJson([
-            [
-                'uid'       => '1',
-                'home_team' => 'Arsenal',
-                'away_team' => 'Bournemouth'
-            ],
-            [
-                "uid"       => '2',
-                "home_team" => "Arsenal",
-                "away_team" => "Brighton & Hove Albion"
+            'data' => [
+                [
+                    'id'       => '1',
+                    'home_team' => 'Arsenal',
+                    'away_team' => 'Bournemouth'
+                ],
+                [
+                    "id"       => '2',
+                    "home_team" => "Arsenal",
+                    "away_team" => "Brighton & Hove Albion"
+                ]
             ]
         ]);
     }
@@ -45,9 +47,11 @@ class FixtureTest extends TestCase
     {
         $response = $this->json('get', '/fixtures/'.$id);
         $response->assertJson([
-            'uid' => $id,
-            'home_team' => $homeTeam,
-            'away_team' => $awayTeam
+            'data' => [
+                'id' => $id,
+                'home_team' => $homeTeam,
+                'away_team' => $awayTeam
+            ]
         ]);
     }
 

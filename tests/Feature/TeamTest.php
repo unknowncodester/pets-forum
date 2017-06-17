@@ -6,8 +6,6 @@ use Tests\TestCase;
 
 class TeamTest extends TestCase
 {
-    const INVALID_TEAM_ID = '100000';
-
     /**
      * A basic test example.
      *
@@ -28,19 +26,19 @@ class TeamTest extends TestCase
     {
         $expected = [
             [
-                "uid" => 1,
+                "id" => 1,
                 "name"=> "Arsenal"
             ],
             [
-                "uid" => 2,
+                "id" => 2,
                 "name"=> "Bournemouth"
-            ],
+            ]
         ];
 
         $response = $this->get('/teams');
         $response
             ->assertStatus(200)
-            ->assertJson($expected);
+            ->assertJson(['data' => $expected]);
     }
 
     /**
@@ -49,17 +47,17 @@ class TeamTest extends TestCase
      * @dataProvider teamDataProvider
      * @return void
      */
-    public function testGettingSinglePet($id, $name)
+    public function testGettingSingleTeam($id, $name)
     {
         $expected = [
-            "uid" => $id,
+            "id" => $id,
             "name"=> $name
         ];
 
         $response = $this->get('/teams/'.$id);
         $response
             ->assertStatus(200)
-            ->assertJson($expected);
+            ->assertJson(['data' => $expected]);
     }
 
     /**
@@ -69,7 +67,7 @@ class TeamTest extends TestCase
     {
         return [
             [
-                "uid" => 1,
+                "id" => 1,
                 "name"=> "Arsenal"
             ],
             [
@@ -93,7 +91,7 @@ class TeamTest extends TestCase
         );
 
         $response
-            ->assertStatus(200);
+            ->assertStatus(201);
 
         $this->assertDatabaseHas('teams', [
             'name' => 'Bolton'
