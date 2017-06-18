@@ -3,15 +3,15 @@
 namespace App\Http\Controllers;
 
 use Validator;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Models\Team;
 
-class Team extends Controller
+class TeamController extends Controller
 {
+
     public function index()
     {
-        $teams = DB::table('teams')
-            ->get();
+        $teams = Team::all();
 
         return response()
             ->json(['data' => $teams], 200);
@@ -19,10 +19,7 @@ class Team extends Controller
 
     public function show($id)
     {
-        $team = DB::table('teams')
-            ->where('id', $id)
-            ->get()
-            ->first();
+        $team = Team::find($id);
 
         return response()
             ->json(['data' => $team], 200);
@@ -39,11 +36,9 @@ class Team extends Controller
                 ->json($validator->errors()->all(), 400);
         }
 
-        DB::table('teams')
-            ->insert($request->all()
-        );
+        $flight = Team::create($request->all());
 
         return response()
-            ->json(['data'=>''], 201);
+            ->json(['data' => $flight], 201);
     }
 }

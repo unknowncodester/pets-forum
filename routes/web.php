@@ -16,10 +16,10 @@ Route::get('/', function () {
 });
 
 // teams
-Route::get('teams', 'Team@index');
-Route::get('teams/{id}', 'Team@show');
-Route::post('teams', 'Team@store');
+Route::get('teams', 'TeamController@index');
+Route::get('teams/{id}', 'TeamController@show');
+Route::post('teams', 'TeamController@store');
 
 // fixtures
-Route::get('fixtures', 'Fixture@index');
-Route::get('fixtures/{id}', 'Fixture@show');
+Route::get('fixtures', 'FixtureController@index');
+Route::get('fixtures/{id}', 'FixtureController@show');
