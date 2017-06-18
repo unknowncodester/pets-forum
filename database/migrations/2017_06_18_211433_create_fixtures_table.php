@@ -30,6 +30,6 @@ class CreateFixturesTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('fixtures');
     }
 }
