@@ -29,16 +29,9 @@ class FixturesTableSeeder extends Seeder
                 // cant play a game against yourself!
                 if($teamOneId != $teamTwoId)
                 {
-                    // home game
                     $fixtures[] = [
                         "home_team_id" => $teamOneId,
                         "away_team_id" => $teamTwoId
-                    ];
-
-                    // away game
-                    $fixtures[] = [
-                        "home_team_id" => $teamTwoId,
-                        "away_team_id" => $teamOneId
                     ];
                 }
             }
