@@ -9,6 +9,18 @@ class Fixture extends Model
 {
     protected $fillable = ['home_team', 'away_team'];
 
+    public function homeTeam() {
+        return $this->belongsTo('Team', 'home_team_id');
+    }
+
+    public function awayTeam() {
+        return $this->belongsTo('Team', 'away_team_id');
+    }
+
+    public function teams() {
+        return $this->homeTeam->merge($this->awayTeam);
+    }
+
     public static function getOne(int $id)
     {
         $fixture = DB::table('fixtures')

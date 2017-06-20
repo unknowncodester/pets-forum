@@ -23,3 +23,9 @@ Route::post('teams', 'TeamController@store');
 // fixtures
 Route::get('fixtures', 'FixtureController@index');
 Route::get('fixtures/{id}', 'FixtureController@show');
+
+
+// teams Fixtures
+Route::get('teams/{teamId}/fixtures', 'TeamFixtureController@index');
+Route::get('teams/{teamId}/fixtures/{fixtureId}', 'TeamFixtureController@show');
+

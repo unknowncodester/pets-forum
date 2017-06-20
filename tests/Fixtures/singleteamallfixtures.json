@@ -1,0 +1,104 @@
+{
+    "data":[
+      {
+          "id":1,
+         "home_team":"Arsenal",
+         "away_team":"Bournemouth"
+      },
+      {
+          "id":2,
+         "home_team":"Arsenal",
+         "away_team":"Brighton & Hove Albion"
+      },
+      {
+          "id":3,
+         "home_team":"Arsenal",
+         "away_team":"Burnley"
+      },
+      {
+          "id":4,
+         "home_team":"Arsenal",
+         "away_team":"Chelsea"
+      },
+      {
+          "id":5,
+         "home_team":"Arsenal",
+         "away_team":"Crystal Palace"
+      },
+      {
+          "id":6,
+         "home_team":"Arsenal",
+         "away_team":"Everton"
+      },
+      {
+          "id":7,
+         "home_team":"Arsenal",
+         "away_team":"Huddersfield Town"
+      },
+      {
+          "id":8,
+         "home_team":"Arsenal",
+         "away_team":"Leicester City"
+      },
+      {
+          "id":9,
+         "home_team":"Arsenal",
+         "away_team":"Liverpool"
+      },
+      {
+          "id":10,
+         "home_team":"Arsenal",
+         "away_team":"Manchester City"
+      },
+      {
+          "id":11,
+         "home_team":"Arsenal",
+         "away_team":"Manchester United"
+      },
+      {
+          "id":12,
+         "home_team":"Arsenal",
+         "away_team":"Newcastle United"
+      },
+      {
+          "id":13,
+         "home_team":"Arsenal",
+         "away_team":"Southampton"
+      },
+      {
+          "id":14,
+         "home_team":"Arsenal",
+         "away_team":"Stoke City"
+      },
+      {
+          "id":15,
+         "home_team":"Arsenal",
+         "away_team":"Swansea City"
+      },
+      {
+          "id":16,
+         "home_team":"Arsenal",
+         "away_team":"Tottenham Hotspur"
+      },
+      {
+          "id":17,
+         "home_team":"Arsenal",
+         "away_team":"Watford"
+      },
+      {
+          "id":18,
+         "home_team":"Arsenal",
+         "away_team":"West Bromwich Albion"
+      },
+      {
+          "id":19,
+         "home_team":"Arsenal",
+         "away_team":"West Ham United"
+      },
+      {
+          "id":20,
+         "home_team":"Bournemouth",
+         "away_team":"Arsenal"
+      }
+    ]
+}
