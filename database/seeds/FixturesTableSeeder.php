@@ -31,12 +31,35 @@ class FixturesTableSeeder extends Seeder
                 {
                     $fixtures[] = [
                         "home_team_id" => $teamOneId,
-                        "away_team_id" => $teamTwoId
+                        "away_team_id" => $teamTwoId,
+                        "date" => $this->randomDate(
+                            '2017-08-11',
+                            '2018-05-20',
+                            'Y-m-d'
+                        )." 15:00:00"
                     ];
                 }
             }
         }
 
         return $fixtures;
+    }
+
+    /**
+     * Method to generate random date between two dates
+     * @param $sStartDate
+     * @param $sEndDate
+     * @param string $sFormat
+     * @return bool|string
+     */
+    function randomDate($sStartDate, $sEndDate, $sFormat = 'Y-m-d H:i:s')
+    {
+        // Convert the supplied date to timestamp
+        $fMin = strtotime($sStartDate);
+        $fMax = strtotime($sEndDate);
+        // Generate a random number from the start and end dates
+        $fVal = mt_rand($fMin, $fMax);
+        // Convert back to the specified date format
+        return date($sFormat, $fVal);
     }
 }
