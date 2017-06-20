@@ -11,13 +11,7 @@ class TeamFixtureController extends Controller
 {
     public function index($teamId)
     {
-        $team = Team::find($teamId);
-
-        foreach ($team->homeFixtures as $fixture) {
-            echo $fixture;
-        }
-
-        $fixtures = $team->homeFixtures()->where('home_team_id', $teamId)->toSql();
+        $fixtures = Team::allFixtures($teamId);
 
         return response()
             ->json(['data' => $fixtures], 200);

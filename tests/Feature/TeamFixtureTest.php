@@ -25,8 +25,8 @@ class TeamFixtureTest extends TestCase
     {
         $expected = json_decode(file_get_contents(__DIR__ . "/../Fixtures/singleteamallfixtures.json"), true);
 
-        $response = $this->json('get', '/teams/1/fixtures');
-        $response->assertJson($expected);
+        $this->json('get', '/teams/1/fixtures')
+            ->assertJson($expected);
     }
 }
 

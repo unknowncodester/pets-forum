@@ -1,104 +1,160 @@
 {
-    "data":[
-      {
-          "id":1,
-         "home_team":"Arsenal",
-         "away_team":"Bournemouth"
-      },
-      {
-          "id":2,
-         "home_team":"Arsenal",
-         "away_team":"Brighton & Hove Albion"
-      },
-      {
-          "id":3,
-         "home_team":"Arsenal",
-         "away_team":"Burnley"
-      },
-      {
-          "id":4,
-         "home_team":"Arsenal",
-         "away_team":"Chelsea"
-      },
-      {
-          "id":5,
-         "home_team":"Arsenal",
-         "away_team":"Crystal Palace"
-      },
-      {
-          "id":6,
-         "home_team":"Arsenal",
-         "away_team":"Everton"
-      },
-      {
-          "id":7,
-         "home_team":"Arsenal",
-         "away_team":"Huddersfield Town"
-      },
-      {
-          "id":8,
-         "home_team":"Arsenal",
-         "away_team":"Leicester City"
-      },
-      {
-          "id":9,
-         "home_team":"Arsenal",
-         "away_team":"Liverpool"
-      },
-      {
-          "id":10,
-         "home_team":"Arsenal",
-         "away_team":"Manchester City"
-      },
-      {
-          "id":11,
-         "home_team":"Arsenal",
-         "away_team":"Manchester United"
-      },
-      {
-          "id":12,
-         "home_team":"Arsenal",
-         "away_team":"Newcastle United"
-      },
-      {
-          "id":13,
-         "home_team":"Arsenal",
-         "away_team":"Southampton"
-      },
-      {
-          "id":14,
-         "home_team":"Arsenal",
-         "away_team":"Stoke City"
-      },
-      {
-          "id":15,
-         "home_team":"Arsenal",
-         "away_team":"Swansea City"
-      },
-      {
-          "id":16,
-         "home_team":"Arsenal",
-         "away_team":"Tottenham Hotspur"
-      },
-      {
-          "id":17,
-         "home_team":"Arsenal",
-         "away_team":"Watford"
-      },
-      {
-          "id":18,
-         "home_team":"Arsenal",
-         "away_team":"West Bromwich Albion"
-      },
-      {
-          "id":19,
-         "home_team":"Arsenal",
-         "away_team":"West Ham United"
-      },
-      {
-          "id":20,
-         "home_team":"Bournemouth",
-         "away_team":"Arsenal"
-      }
-    ]
+    "data": {
+      "home_fixtures" : [
+        {
+          "home_team":"Arsenal",
+          "away_team":"Bournemouth"
+        },
+        {
+          "home_team":"Arsenal",
+          "away_team":"Brighton & Hove Albion"
+        },
+        {
+          "home_team":"Arsenal",
+          "away_team":"Burnley"
+        },
+        {
+          "home_team":"Arsenal",
+          "away_team":"Chelsea"
+        },
+        {
+          "home_team":"Arsenal",
+          "away_team":"Crystal Palace"
+        },
+        {
+          "home_team":"Arsenal",
+          "away_team":"Everton"
+        },
+        {
+          "home_team":"Arsenal",
+          "away_team":"Huddersfield Town"
+        },
+        {
+          "home_team":"Arsenal",
+          "away_team":"Leicester City"
+        },
+        {
+          "home_team":"Arsenal",
+          "away_team":"Liverpool"
+        },
+        {
+          "home_team":"Arsenal",
+          "away_team":"Manchester City"
+        },
+        {
+          "home_team":"Arsenal",
+          "away_team":"Manchester United"
+        },
+        {
+          "home_team":"Arsenal",
+          "away_team":"Newcastle United"
+        },
+        {
+          "home_team":"Arsenal",
+          "away_team":"Southampton"
+        },
+        {
+          "home_team":"Arsenal",
+          "away_team":"Stoke City"
+        },
+        {
+          "home_team":"Arsenal",
+          "away_team":"Swansea City"
+        },
+        {
+          "home_team":"Arsenal",
+          "away_team":"Tottenham Hotspur"
+        },
+        {
+          "home_team":"Arsenal",
+          "away_team":"Watford"
+        },
+        {
+          "home_team":"Arsenal",
+          "away_team":"West Bromwich Albion"
+        },
+        {
+          "home_team":"Arsenal",
+          "away_team":"West Ham United"
+        }
+      ],
+      "away_fixtures" : [
+        {
+          "home_team": "Bournemouth",
+          "away_team": "Arsenal"
+        },
+        {
+          "home_team": "Brighton & Hove Albion",
+          "away_team": "Arsenal"
+        },
+        {
+          "home_team": "Burnley",
+          "away_team": "Arsenal"
+        },
+        {
+          "home_team": "Chelsea",
+          "away_team": "Arsenal"
+        },
+        {
+          "home_team": "Crystal Palace",
+          "away_team": "Arsenal"
+        },
+        {
+          "home_team": "Everton",
+          "away_team": "Arsenal"
+        },
+        {
+          "home_team": "Huddersfield Town",
+          "away_team": "Arsenal"
+        },
+        {
+          "home_team": "Leicester City",
+          "away_team": "Arsenal"
+        },
+        {
+          "home_team": "Liverpool",
+          "away_team": "Arsenal"
+        },
+        {
+          "home_team": "Manchester City",
+          "away_team": "Arsenal"
+        },
+        {
+          "home_team": "Manchester United",
+          "away_team": "Arsenal"
+        },
+        {
+          "home_team": "Newcastle United",
+          "away_team": "Arsenal"
+        },
+        {
+          "home_team": "Southampton",
+          "away_team": "Arsenal"
+        },
+        {
+          "home_team": "Stoke City",
+          "away_team": "Arsenal"
+        },
+        {
+          "home_team": "Swansea City",
+          "away_team": "Arsenal"
+        },
+        {
+          "home_team": "Tottenham Hotspur",
+          "away_team": "Arsenal"
+        },
+        {
+          "home_team": "Watford",
+          "away_team": "Arsenal"
+        },
+        {
+          "home_team": "West Bromwich Albion",
+          "away_team": "Arsenal"
+        },
+        {
+          "home_team": "West Ham United",
+          "away_team": "Arsenal"
+        }
+      ]
+    }
 }

@@ -3,23 +3,40 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Team extends Model
 {
     protected $fillable = ['name'];
 
-    public function homeFixtures()
+    public static function homeFixtures($teamId)
     {
-        return $this->belongsTo(Fixture::class, 'home_team_id', 'id');
+        $homeFixtures = DB::table('fixtures')
+            ->join('teams as home', 'home.id', '=', 'fixtures.home_team_id')
+            ->join('teams as away', 'away.id', '=', 'fixtures.away_team_id')
+            ->select('home.name as home_team', 'away.name as away_team')
+            ->where('home_team_id', $teamId)
+            ->get();
+
+        return $homeFixtures;
     }
 
-    public function awayFixtures()
+    public static function awayFixtures($teamId)
     {
-        return $this->belongsTo(Fixture::class, 'away_team_id', 'id');
+        $awayFixtures = DB::table('fixtures')
+            ->join('teams as home', 'home.id', '=', 'fixtures.home_team_id')
+            ->join('teams as away', 'away.id', '=', 'fixtures.away_team_id')
+            ->select('home.name as home_team', 'away.name as away_team')
+            ->where('away_team_id', $teamId)
+            ->get();
+
+        return $awayFixtures;
     }
 
-    public function allFixtures() {
-        return $this->homeFixtures->merge($this->awayFixtures);
+    public static function allFixtures($teamId) {
+        return [
+            "home_fixtures" => self::homeFixtures($teamId),
+            "away_fixtures" => self::awayFixtures($teamId)
+        ];
     }
-
 }
