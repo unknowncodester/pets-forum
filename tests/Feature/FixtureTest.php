@@ -73,5 +73,14 @@ class FixtureTest extends TestCase
             ]
         ];
     }
+
+    /**
+     * @test
+     */
+    public function canGetFixturesBetweenATimePeriod()
+    {
+        $response = $this->json('get', '/fixtures?date=2017-08-11&duration=10');
+        $response->assertStatus(200);
+    }
 }
 

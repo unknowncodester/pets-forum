@@ -50,10 +50,7 @@ class Team extends Model
             ->where(function ($query) use (&$teamId) {
                 $query->where('home_team_id', $teamId)
                     ->orWhere('away_team_id', $teamId);
-            })
-
-
-            ->get();
+            })->get();
 
         return $fixture;
 
