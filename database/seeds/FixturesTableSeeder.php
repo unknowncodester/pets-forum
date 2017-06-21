@@ -36,7 +36,7 @@ class FixturesTableSeeder extends Seeder
                             '2017-08-11',
                             '2018-05-20',
                             'Y-m-d'
-                        )." 15:00:00"
+                        )
                     ];
                 }
             }
@@ -60,6 +60,6 @@ class FixturesTableSeeder extends Seeder
         // Generate a random number from the start and end dates
         $fVal = mt_rand($fMin, $fMax);
         // Convert back to the specified date format
-        return date($sFormat, $fVal);
+        return date($sFormat, $fVal)." 15:00:00";
     }
 }

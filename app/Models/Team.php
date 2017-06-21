@@ -14,7 +14,7 @@ class Team extends Model
         $homeFixtures = DB::table('fixtures')
             ->join('teams as home', 'home.id', '=', 'fixtures.home_team_id')
             ->join('teams as away', 'away.id', '=', 'fixtures.away_team_id')
-            ->select('home.name as home_team', 'away.name as away_team', 'fixtures.date')
+            ->select('fixtures.id', 'home.name as home_team', 'away.name as away_team', 'fixtures.date')
             ->where('home_team_id', $teamId)
             ->get();
 
@@ -26,7 +26,7 @@ class Team extends Model
         $awayFixtures = DB::table('fixtures')
             ->join('teams as home', 'home.id', '=', 'fixtures.home_team_id')
             ->join('teams as away', 'away.id', '=', 'fixtures.away_team_id')
-            ->select('home.name as home_team', 'away.name as away_team', 'fixtures.date')
+            ->select('fixtures.id', 'home.name as home_team', 'away.name as away_team', 'fixtures.date')
             ->where('away_team_id', $teamId)
             ->get();
 
@@ -38,5 +38,24 @@ class Team extends Model
             "home_fixtures" => self::homeFixtures($teamId),
             "away_fixtures" => self::awayFixtures($teamId)
         ];
+    }
+
+    public static function getFixture($teamId, $fixtureId) {
+
+        $fixture = DB::table('fixtures')
+            ->join('teams as home', 'home.id', '=', 'fixtures.home_team_id')
+            ->join('teams as away', 'away.id', '=', 'fixtures.away_team_id')
+            ->select('home.name as home_team', 'away.name as away_team', 'fixtures.date')
+            ->where('fixtures.id', $fixtureId)
+            ->where(function ($query) use (&$teamId) {
+                $query->where('home_team_id', $teamId)
+                    ->orWhere('away_team_id', $teamId);
+            })
+
+
+            ->get();
+
+        return $fixture;
+
     }
 }
