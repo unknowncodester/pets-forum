@@ -11,21 +11,20 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/api', function () {
     return view('welcome');
 });
 
 // teams
-Route::get('teams', 'TeamController@index');
-Route::get('teams/{id}', 'TeamController@show');
-Route::post('teams', 'TeamController@store');
+Route::get('api/teams', 'TeamController@index');
+Route::get('api/teams/{id}', 'TeamController@show');
+Route::post('api/teams', 'TeamController@store');
 
 // fixtures
-Route::get('fixtures', 'FixtureController@index');
-Route::get('fixtures/{id}', 'FixtureController@show');
-
+Route::get('api/fixtures', 'FixtureController@index');
+Route::get('api/fixtures/{id}', 'FixtureController@show');
 
 // teams Fixtures
-Route::get('teams/{teamId}/fixtures', 'TeamFixtureController@index');
-Route::get('teams/{teamId}/fixtures/{fixtureId}', 'TeamFixtureController@show');
+Route::get('api/teams/{teamId}/fixtures', 'TeamFixtureController@index');
+Route::get('api/teams/{teamId}/fixtures/{fixtureId}', 'TeamFixtureController@show');
 
