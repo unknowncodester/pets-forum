@@ -28,3 +28,5 @@ Route::get('api/fixtures/{id}', 'FixtureController@show');
 Route::get('api/teams/{teamId}/fixtures', 'TeamFixtureController@index');
 Route::get('api/teams/{teamId}/fixtures/{fixtureId}', 'TeamFixtureController@show');
 
+// topics
+Route::get('api/topics', 'TopicController@index');

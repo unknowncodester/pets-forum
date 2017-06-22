@@ -6,12 +6,6 @@ use Tests\TestCase;
 
 class TeamFixtureTest extends TestCase
 {
-    /**
-     * A basic test example.
-     *
-     * @test
-     * @return void
-     */
     public function webServiceCanBeReached()
     {
         $response = $this->json('get', '/teams/1/fixtures');

@@ -6,12 +6,7 @@ use Tests\TestCase;
 
 class TeamTest extends TestCase
 {
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
-    public function testBasicTest()
+    public function webServiceCanBeReached()
     {
         $response = $this->json('get', '/teams');
         $response->assertStatus(200);
