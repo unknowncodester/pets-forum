@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Models\User;
 use Tests\TestCase;
 
 class PostTest extends TestCase
@@ -55,14 +56,17 @@ class PostTest extends TestCase
     /**
      * @test
      */
-    public function canCreateAPost()
+    public function canCreateAPostWhenAuthenticated()
     {
+        $user = User::find(1);
+        $this->be($user);
+
         $response = $this->json(
             'POST',
             '/posts',
             [
-                "title" => "My favourite match was Everton vs West Ham",
-                "body" => "9 goals in total, hatrick for andy carroll..",
+                "title" => "My 2nd favourite match...",
+                "body" => "was Blackpool vs West Ham.. dont know why",
                 "user_id" => 1,
                 "topic_id" => 1
             ]
@@ -72,12 +76,25 @@ class PostTest extends TestCase
             ->assertStatus(201);
 
         $this->assertDatabaseHas('posts', [
-            "title" => "My favourite match was Everton vs West Ham",
-            "body" => "9 goals in total, hatrick for andy carroll..",
+            "title" => "My 2nd favourite match...",
+            "body" => "was Blackpool vs West Ham.. dont know why",
             "user_id" => 1,
             "topic_id" => 1
         ]);
     }
 
+    /**
+     * @test
+     */
+    public function cantCreateAPostWhenUnauthenticated()
+    {
+        $response = $this->json(
+            'POST',
+            '/posts'
+        );
+
+        $response
+            ->assertStatus(401);
+    }
 }
 
