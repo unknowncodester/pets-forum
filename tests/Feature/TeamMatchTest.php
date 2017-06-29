@@ -42,6 +42,6 @@ class TeamMatchTest extends TestCase
         ];
 
         $this->json('get', '/teams/1/matches')
-            ->assertJson($expected);
+            ->assertJsonStructure($expected);
     }
 }

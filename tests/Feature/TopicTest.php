@@ -2,7 +2,6 @@
 
 namespace Tests\Feature;
 
-use App\Models\Topic;
 use Tests\TestCase;
 
 
@@ -29,6 +28,19 @@ class TopicTest extends TestCase
         ];
 
         $response = $this->json('get', '/topics');
+        $response->assertJsonStructure(['data' => $expected]);
+    }
+
+    /**
+     * @test
+     */
+    public function getASingleTopic()
+    {
+        $expected = [
+            'name'
+        ];
+
+        $response = $this->json('get', '/topics/1');
         $response->assertJsonStructure(['data' => $expected]);
     }
 }

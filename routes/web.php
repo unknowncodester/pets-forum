@@ -30,6 +30,7 @@ Route::get('api/teams/{teamId}/matches/{matchId}', 'TeamMatchController@show');
 
 // topics
 Route::get('api/topics', 'TopicController@index');
+Route::get('api/topics/{id}', 'TopicController@show');
 
 // posts
 Route::get('api/posts', 'PostController@index');
