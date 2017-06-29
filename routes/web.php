@@ -21,12 +21,12 @@ Route::get('api/teams/{id}', 'TeamController@show');
 Route::post('api/teams', 'TeamController@store');
 
 // fixtures
-Route::get('api/fixtures', 'FixtureController@index');
-Route::get('api/fixtures/{id}', 'FixtureController@show');
+Route::get('api/matches', 'MatchController@index');
+Route::get('api/matches/{id}', 'MatchController@show');
 
 // teams Fixtures
-Route::get('api/teams/{teamId}/fixtures', 'TeamFixtureController@index');
-Route::get('api/teams/{teamId}/fixtures/{fixtureId}', 'TeamFixtureController@show');
+Route::get('api/teams/{teamId}/matches', 'TeamMatchController@index');
+Route::get('api/teams/{teamId}/matches/{matchId}', 'TeamMatchController@show');
 
 // topics
 Route::get('api/topics', 'TopicController@index');

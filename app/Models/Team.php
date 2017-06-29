@@ -9,50 +9,50 @@ class Team extends Model
 {
     protected $fillable = ['name'];
 
-    public static function homeFixtures($teamId)
+    public static function homeMatches($teamId)
     {
-        $homeFixtures = DB::table('fixtures')
-            ->join('teams as home', 'home.id', '=', 'fixtures.home_team_id')
-            ->join('teams as away', 'away.id', '=', 'fixtures.away_team_id')
-            ->select('fixtures.id', 'home.name as home_team', 'away.name as away_team', 'fixtures.date')
+        $homeMatches = DB::table('matches')
+            ->join('teams as home', 'home.id', '=', 'matches.home_team_id')
+            ->join('teams as away', 'away.id', '=', 'matches.away_team_id')
+            ->select('matches.id', 'home.name as home_team', 'away.name as away_team', 'matches.date')
             ->where('home_team_id', $teamId)
             ->get();
 
-        return $homeFixtures;
+        return $homeMatches;
     }
 
-    public static function awayFixtures($teamId)
+    public static function awayMatches($teamId)
     {
-        $awayFixtures = DB::table('fixtures')
-            ->join('teams as home', 'home.id', '=', 'fixtures.home_team_id')
-            ->join('teams as away', 'away.id', '=', 'fixtures.away_team_id')
-            ->select('fixtures.id', 'home.name as home_team', 'away.name as away_team', 'fixtures.date')
+        $awayFixtures = DB::table('matches')
+            ->join('teams as home', 'home.id', '=', 'matches.home_team_id')
+            ->join('teams as away', 'away.id', '=', 'matches.away_team_id')
+            ->select('matches.id', 'home.name as home_team', 'away.name as away_team', 'matches.date')
             ->where('away_team_id', $teamId)
             ->get();
 
         return $awayFixtures;
     }
 
-    public static function allFixtures($teamId) {
+    public static function allMatches($teamId) {
         return [
-            "home_fixtures" => self::homeFixtures($teamId),
-            "away_fixtures" => self::awayFixtures($teamId)
+            "home_matches" => self::homeMatches($teamId),
+            "away_matches" => self::awayMatches($teamId)
         ];
     }
 
-    public static function getFixture($teamId, $fixtureId) {
+    public static function getMatch($teamId, $matchId) {
 
-        $fixture = DB::table('fixtures')
-            ->join('teams as home', 'home.id', '=', 'fixtures.home_team_id')
-            ->join('teams as away', 'away.id', '=', 'fixtures.away_team_id')
-            ->select('home.name as home_team', 'away.name as away_team', 'fixtures.date')
-            ->where('fixtures.id', $fixtureId)
+        $match = DB::table('matches')
+            ->join('teams as home', 'home.id', '=', 'matches.home_team_id')
+            ->join('teams as away', 'away.id', '=', 'matches.away_team_id')
+            ->select('home.name as home_team', 'away.name as away_team', 'matches.date')
+            ->where('matches.id', $matchId)
             ->where(function ($query) use (&$teamId) {
                 $query->where('home_team_id', $teamId)
                     ->orWhere('away_team_id', $teamId);
             })->get();
 
-        return $fixture;
+        return $match;
 
     }
 }

@@ -1,9 +1,9 @@
 <?php
 
-use App\Models\Fixture;
+use App\Models\Match;
 use Illuminate\Database\Seeder;
 
-class FixturesTableSeeder extends Seeder
+class MatchesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,7 +12,7 @@ class FixturesTableSeeder extends Seeder
      */
     public function run()
     {
-        Fixture::insert([
+        Match::insert([
                 [
                     "home_team_id" => 1,
                     "away_team_id" => 2,

@@ -13,7 +13,7 @@ class CreateFixturesTable extends Migration
      */
     public function up()
     {
-        Schema::create('fixtures', function (Blueprint $table) {
+        Schema::create('matches', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('home_team_id')->unsigned();
             $table->integer('away_team_id')->unsigned();
@@ -31,6 +31,6 @@ class CreateFixturesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('fixtures');
+        Schema::dropIfExists('matches');
     }
 }

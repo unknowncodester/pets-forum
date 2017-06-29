@@ -4,20 +4,20 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 
-class FixtureTest extends TestCase
+class MatchTest extends TestCase
 {
     public function webServiceCanBeReached()
     {
-        $response = $this->json('get', '/fixtures');
+        $response = $this->json('get', '/matches');
         $response->assertStatus(200);
     }
 
     /**
      * @test
      */
-    public function canGetTheFixtures()
+    public function canGetTheMatches()
     {
-        $response = $this->json('get', '/fixtures');
+        $response = $this->json('get', '/matches');
         $response->assertJsonStructure([
             'data' => [
                 [
@@ -30,12 +30,12 @@ class FixtureTest extends TestCase
     }
 
     /**
-     * @dataProvider fixtureDataProvider
+     * @dataProvider matchDataProvider
      * @test
      */
-    public function canGetAFixture($id, $homeTeam, $awayTeam)
+    public function canGetAMatch($id, $homeTeam, $awayTeam)
     {
-        $response = $this->json('get', '/fixtures/'.$id);
+        $response = $this->json('get', '/matches/'.$id);
         $response->assertJson([
             'data' => [
                 'id' => $id,
@@ -48,7 +48,7 @@ class FixtureTest extends TestCase
     /**
      * @return array
      */
-    public function fixtureDataProvider()
+    public function matchDataProvider()
     {
         return [
             [
@@ -67,9 +67,9 @@ class FixtureTest extends TestCase
     /**
      * @test
      */
-    public function canGetFixturesBetweenATimePeriod()
+    public function canGetMatchesBetweenATimePeriod()
     {
-        $response = $this->json('get', '/fixtures?date=2017-08-14&duration=10');
+        $response = $this->json('get', '/matches?date=2017-08-14&duration=10');
         $response->assertStatus(200);
     }
 }
