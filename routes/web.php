@@ -33,3 +33,4 @@ Route::get('api/topics', 'TopicController@index');
 
 // posts
 Route::get('api/posts', 'PostController@index');
+Route::get('api/posts/{id}', 'PostController@show');

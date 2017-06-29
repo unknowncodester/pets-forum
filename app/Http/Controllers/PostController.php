@@ -14,4 +14,12 @@ class PostController extends Controller
         return response()
             ->json(['data' => $posts], 200);
     }
+
+    public function show($id)
+    {
+        $post = Post::find($id);
+
+        return response()
+            ->json(['data' => $post], 200);
+    }
 }

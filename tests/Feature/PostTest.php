@@ -35,5 +35,21 @@ class PostTest extends TestCase
         $response = $this->json('get', '/posts');
         $response->assertJsonStructure(['data' => $expected]);
     }
+
+    /**
+     * @test
+     */
+    public function getOnePost()
+    {
+        $expected = [
+            "title" => "Best Matches",
+            "body" => "So many great matches..",
+            "user_id" => 1,
+            "topic_id" => 1
+        ];
+
+        $response = $this->json('get', '/posts/1');
+        $response->assertJson(['data' => $expected]);
+    }
 }
 
