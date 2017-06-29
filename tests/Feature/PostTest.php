@@ -86,7 +86,7 @@ class PostTest extends TestCase
     /**
      * @test
      */
-    public function cantCreateAPostWhenUnauthenticated()
+    public function cannotCreateAPostWhenUnauthenticated()
     {
         $response = $this->json(
             'POST',
@@ -96,5 +96,29 @@ class PostTest extends TestCase
         $response
             ->assertStatus(401);
     }
+
+    /**
+     * @test
+     */
+    public function cannotCreateAPostForAnotherUser()
+    {
+        $user = User::find(1);
+        $this->be($user);
+
+        $response = $this->json(
+            'POST',
+            '/posts',
+            [
+                "title" => "My 2nd favourite match...",
+                "body" => "was Blackpool vs West Ham.. dont know why",
+                "user_id" => 2,
+                "topic_id" => 1
+            ]
+        );
+
+        $response
+            ->assertStatus(403);
+    }
+
 }
 

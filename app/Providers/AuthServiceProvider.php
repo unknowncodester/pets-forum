@@ -25,6 +25,8 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        Gate::define('post', function ($user, $inputtedUser) {
+            return $user->id == $inputtedUser;
+        });
     }
 }

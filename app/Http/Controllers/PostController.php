@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use Illuminate\Support\Facades\Gate;
 use Validator;
 use Illuminate\Http\Request;
 
@@ -38,11 +39,12 @@ class PostController extends Controller
                 ->json($validator->errors()->all(), 400);
         }
 
-
-        $post = Post::create($request->all());
-
+        if (Gate::denies('post', $request->input('user_id'))) {
+            return response()
+                ->json($validator->errors()->all(), 403);
+        }
 
         return response()
-            ->json(['data' => $post], 201);
+            ->json(['data' => Post::create($request->all())], 201);
     }
 }
