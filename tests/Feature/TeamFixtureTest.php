@@ -6,6 +6,9 @@ use Tests\TestCase;
 
 class TeamFixtureTest extends TestCase
 {
+    /**
+     * @test
+     */
     public function webServiceCanBeReached()
     {
         $response = $this->json('get', '/teams/1/fixtures');
@@ -17,10 +20,24 @@ class TeamFixtureTest extends TestCase
      */
     public function canGetAllFixturesForATeam()
     {
-        $expected = json_decode(file_get_contents(__DIR__ . "/../Fixtures/singleteamallfixtures.json"), true);
+        $expected = [
+            'data' => [
+                'home_fixtures' => [
+                    'id',
+                    'home_team',
+                    'away_team',
+                    'date'
+                ],
+                'away_fixtures' => [
+                    'id',
+                    'home_team',
+                    'away_team',
+                    'date'
+                ]
+            ]
+        ];
 
         $this->json('get', '/teams/1/fixtures')
             ->assertJson($expected);
     }
 }
-

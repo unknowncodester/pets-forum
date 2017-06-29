@@ -2,24 +2,12 @@
 
 namespace Tests\Feature;
 
-use App\Topic;
+use App\Models\Topic;
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithoutMiddleware;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
+
 
 class TopicTest extends TestCase
 {
-    use DatabaseMigrations;
-
-    public function setUp()
-    {
-        parent::setUp();
-        $flight = new Topic;
-        $flight->name = "Past Premier League Teams";
-        $flight->save();
-    }
-
     /**
      * @test
      */
@@ -36,12 +24,12 @@ class TopicTest extends TestCase
     {
         $expected = [
             [
-                'name' => 'Past Premier League Teams'
+                'name'
             ]
         ];
 
         $response = $this->json('get', '/topics');
-        $response->assertJson(['data' => $expected]);
+        $response->assertJsonStructure(['data' => $expected]);
     }
 }
 

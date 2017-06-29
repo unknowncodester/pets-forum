@@ -18,17 +18,12 @@ class FixtureTest extends TestCase
     public function canGetTheFixtures()
     {
         $response = $this->json('get', '/fixtures');
-        $response->assertJson([
+        $response->assertJsonStructure([
             'data' => [
                 [
-                    'id'       => '1',
-                    'home_team' => 'Arsenal',
-                    'away_team' => 'Bournemouth'
-                ],
-                [
-                    "id"       => '2',
-                    "home_team" => "Arsenal",
-                    "away_team" => "Brighton & Hove Albion"
+                    'id',
+                    'home_team',
+                    'away_team'
                 ]
             ]
         ]);
@@ -74,7 +69,7 @@ class FixtureTest extends TestCase
      */
     public function canGetFixturesBetweenATimePeriod()
     {
-        $response = $this->json('get', '/fixtures?date=2017-08-11&duration=10');
+        $response = $this->json('get', '/fixtures?date=2017-08-14&duration=10');
         $response->assertStatus(200);
     }
 }
