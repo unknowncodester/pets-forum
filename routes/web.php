@@ -11,28 +11,39 @@
 |
 */
 
-Route::get('/api', function () {
+Route::get('/', function () {
     return view('welcome');
 });
 
-// teams
-Route::get('api/teams', 'TeamController@index');
-Route::get('api/teams/{id}', 'TeamController@show');
-Route::post('api/teams', 'TeamController@store');
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
 
-// fixtures
-Route::get('api/matches', 'MatchController@index');
-Route::get('api/matches/{id}', 'MatchController@show');
+// api routes
+Route::group(['prefix' => 'api'], function () {
 
-// teams Fixtures
-Route::get('api/teams/{teamId}/matches', 'TeamMatchController@index');
-Route::get('api/teams/{teamId}/matches/{matchId}', 'TeamMatchController@show');
+    Route::group(['middleware' => 'auth:api'], function () {
+        Route::post('posts', 'PostController@store');
+    });
 
-// topics
-Route::get('api/topics', 'TopicController@index');
-Route::get('api/topics/{id}', 'TopicController@show');
+    // team
+    Route::get('teams', 'TeamController@index');
+    Route::get('teams/{id}', 'TeamController@show');
+    Route::post('teams', 'TeamController@store');
 
-// posts
-Route::get('api/posts', 'PostController@index');
-Route::get('api/posts/{id}', 'PostController@show');
-Route::post('api/posts', 'PostController@store');
+    // fixtures
+    Route::get('matches', 'MatchController@index');
+    Route::get('matches/{id}', 'MatchController@show');
+
+    // Teams' Fixtures
+    Route::get('teams/{teamId}/matches', 'TeamMatchController@index');
+    Route::get('teams/{teamId}/matches/{matchId}', 'TeamMatchController@show');
+
+    // topics
+    Route::get('topics', 'TopicController@index');
+    Route::get('topics/{id}', 'TopicController@show');
+
+    // posts
+    Route::get('posts', 'PostController@index');
+    Route::get('posts/{id}', 'PostController@show');
+
+});

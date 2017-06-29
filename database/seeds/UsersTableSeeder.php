@@ -17,6 +17,7 @@ class UsersTableSeeder extends Seeder
                 "id" => 1,
                 "name" => 'fooUser',
                 "email" => "foo@bar.com",
+                'api_token' => str_random(60),
                 'password' => bcrypt('bazooka')
             ]
         );
