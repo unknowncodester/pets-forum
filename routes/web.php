@@ -35,3 +35,4 @@ Route::get('api/topics/{id}', 'TopicController@show');
 // posts
 Route::get('api/posts', 'PostController@index');
 Route::get('api/posts/{id}', 'PostController@show');
+Route::post('api/posts', 'PostController@store');
