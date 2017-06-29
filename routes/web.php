@@ -30,3 +30,6 @@ Route::get('api/teams/{teamId}/fixtures/{fixtureId}', 'TeamFixtureController@sho
 
 // topics
 Route::get('api/topics', 'TopicController@index');
+
+// posts
+Route::get('api/posts', 'PostController@index');
