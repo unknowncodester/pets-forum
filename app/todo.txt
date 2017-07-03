@@ -1,0 +1,72 @@
+Things to do
+
+api
+1. league table webservice with full and short options...
+    Example json short
+    {
+        "league_table": [
+            {
+                "position": "1",
+                "team_id" : 10,
+                "team_name" : "Liverpool",
+                "played": 10,
+                "won": 8,
+                "draw": 1,
+                "lost": 1,
+                "points": 25
+            }
+        ]
+    }
+
+    Example json long
+        {
+            "league_table": [
+                {
+                    "position": "1",
+                    "team_id" : 10,
+                    "team_name" : "Liverpool",
+                    "played": 10,
+                    "won": 8,
+                    "draw": 1,
+                    "lost": 1,
+                    "points": 25,
+                    "goals_for": 17,
+                    "goals_against": 7,
+                    "home_wins": 5,
+                    "home_draws": 0,
+                    "home_losses": 0,
+                    "home_goals_for": 11,
+                    "home_goals_against": 3,
+                    "away_wins": 3,
+                    "away_draws": 1,
+                    "away_losses": 1,
+                    "away_goals_for": 6,
+                    "away_goals_against": 6,
+                }
+            ]
+
+        }
+2. fixtures with results
+3. form (pass in limit for games)
+
+import scripts
+1. parse and import real fixture list from http://api.football-data.org/v1/competitions/445/fixtures
+    Example json
+    {
+        "fixtures": [
+            {
+                "date": "2017-08-12T14:00:00Z",
+                "status": "SCHEDULED",
+                "matchday": 1,
+                "homeTeamName": "Everton FC",
+                "awayTeamName": "Stoke City FC",
+                "result": {
+                    "goalsHomeTeam": null,
+                    "goalsAwayTeam": null
+                }
+            }
+        ]
+    }
+
+Front end
+Everything!
