@@ -39,7 +39,7 @@ class ImportMatches extends Command
     public function handle()
     {
         $importMatches = new \App\Library\ImportMatches();
-        $importMatches->setReadLocation(__DIR__ . '/../../../tests/Fixtures/third-party-data-subset.json');
+        $importMatches->setReadLocation('http://api.football-data.org/v1/competitions/445/fixtures');
         $matches = $importMatches->parse();
         Match::insert($matches);
     }

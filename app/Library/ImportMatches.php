@@ -44,26 +44,26 @@ class ImportMatches
     private function convertTeamNameToLocalDbId($teamName)
     {
         $teams = [
-            "Arsenal" => 1,
-            "Bournemouth" => 2,
+            "Arsenal FC" => 1,
+            "AFC Bournemouth" => 2,
             "Brighton & Hove Albion" => 3,
-            "Burnley"=> 4,
-            "Chelsea" => 5,
-            "Crystal Palace" => 6,
+            "Burnley FC"=> 4,
+            "Chelsea FC" => 5,
+            "Crystal Palace FC" => 6,
             "Everton FC" => 7,
             "Huddersfield Town" => 8,
-            "Leicester City" => 9,
-            "Liverpool" => 10,
-            "Manchester City" => 11,
-            "Manchester United" => 12,
-            "Newcastle United" => 13,
-            "Southampton" => 14,
+            "Leicester City FC" => 9,
+            "Liverpool FC" => 10,
+            "Manchester City FC" => 11,
+            "Manchester United FC" => 12,
+            "Newcastle United FC" => 13,
+            "Southampton FC" => 14,
             "Stoke City FC" => 15,
-            "Swansea City" => 16,
-            "Tottenham Hotspur" => 17,
-            "Watford" => 18,
-            "West Bromwich Albion" => 19,
-            "West Ham United" => 20
+            "Swansea City FC" => 16,
+            "Tottenham Hotspur FC" => 17,
+            "Watford FC" => 18,
+            "West Bromwich Albion FC" => 19,
+            "West Ham United FC" => 20
         ];
 
         return $teams[$teamName];
