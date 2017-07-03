@@ -16,7 +16,9 @@ class CreateFixturesTable extends Migration
         Schema::create('matches', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('home_team_id')->unsigned();
+            $table->integer('home_team_goals')->nullable();;
             $table->integer('away_team_id')->unsigned();
+            $table->integer('away_team_goals')->nullable();;
             $table->dateTime('date');
             $table->timestamps();
             $table->foreign('home_team_id')->references('id')->on('teams');

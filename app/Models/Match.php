@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class Match extends Model
 {
-    protected $fillable = ['home_team', 'away_team'];
+    protected $fillable = ['home_team', 'away_team', 'home_team_goals', 'away_team_goals'];
 
     public static function getOne(int $id)
     {

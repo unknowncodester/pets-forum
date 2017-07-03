@@ -1,0 +1,15 @@
+{
+  "fixtures": [
+    {
+      "date": "2017-08-12T14:00:00Z",
+      "status": "SCHEDULED",
+      "matchday": 1,
+      "homeTeamName": "Everton FC",
+      "awayTeamName": "Stoke City FC",
+      "result": {
+        "goalsHomeTeam": null,
+        "goalsAwayTeam": null
+      }
+    }
+  ]
+}
