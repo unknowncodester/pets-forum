@@ -36,6 +36,7 @@ class LeagueTable
             )
             ->groupBy('teams.name')
             ->orderBy('points', 'desc')
-            ->get();
+            ->get()
+            ->toArray();
     }
 }
