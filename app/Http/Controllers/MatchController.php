@@ -11,7 +11,10 @@ class MatchController extends Controller
 {
     public function index(Request $request)
     {
-        $fixtures = Match::getAll($request);
+        $date = $request->input('date');
+        $duration = $request->input('duration');
+
+        $fixtures = Match::getAll($date, $duration);
 
         return response()
             ->json(['data' => $fixtures], 200);

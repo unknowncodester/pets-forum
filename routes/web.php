@@ -46,4 +46,7 @@ Route::group(['prefix' => 'api'], function () {
     Route::get('posts', 'PostController@index');
     Route::get('posts/{id}', 'PostController@show');
 
+    // league table
+    Route::get('league', 'LeagueTableController@index');
+
 });

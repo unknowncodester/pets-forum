@@ -25,7 +25,6 @@ class ImportMatches
     {
         $matches = [];
 
-
         $contents = file_get_contents($this->readLocation);
         $json = json_decode($contents, true);
 
