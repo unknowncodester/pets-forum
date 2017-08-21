@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Cache;
 use Validator;
 use Illuminate\Http\Request;
 use App\Models\Team;
@@ -11,7 +12,9 @@ class TeamController extends Controller
 
     public function index()
     {
-        $teams = Team::all();
+        $teams = Cache::remember('teams', 60, function () {
+            return Team::all();
+        });
 
         return response()
             ->json(['data' => $teams], 200);
