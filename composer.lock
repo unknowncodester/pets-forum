@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "1898c49d2fcc9ab11c8eaf74e9149934",
+    "content-hash": "a960d0ae6a9c1f93d999f35739d541e1",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -418,16 +418,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.4.33",
+            "version": "v5.4.35",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "e53a81a2bf406f501cdf818ad949f8d6c8dabfc0"
+                "reference": "54aa18a4e8495c4b6902d9665ec9fa4d3a1f3d2e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/e53a81a2bf406f501cdf818ad949f8d6c8dabfc0",
-                "reference": "e53a81a2bf406f501cdf818ad949f8d6c8dabfc0",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/54aa18a4e8495c4b6902d9665ec9fa4d3a1f3d2e",
+                "reference": "54aa18a4e8495c4b6902d9665ec9fa4d3a1f3d2e",
                 "shasum": ""
             },
             "require": {
@@ -543,7 +543,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2017-08-14T20:17:41+00:00"
+            "time": "2017-08-24T12:30:18+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -3535,6 +3535,57 @@
             "description": "Library that helps with managing the version number of Git-hosted PHP projects",
             "homepage": "https://github.com/sebastianbergmann/version",
             "time": "2016-10-03T07:35:21+00:00"
+        },
+        {
+            "name": "squizlabs/php_codesniffer",
+            "version": "3.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
+                "reference": "c7594a88ae75401e8f8d0bd4deb8431b39045c51"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/c7594a88ae75401e8f8d0bd4deb8431b39045c51",
+                "reference": "c7594a88ae75401e8f8d0bd4deb8431b39045c51",
+                "shasum": ""
+            },
+            "require": {
+                "ext-simplexml": "*",
+                "ext-tokenizer": "*",
+                "ext-xmlwriter": "*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "bin": [
+                "bin/phpcs",
+                "bin/phpcbf"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Greg Sherwood",
+                    "role": "lead"
+                }
+            ],
+            "description": "PHP_CodeSniffer tokenizes PHP, JavaScript and CSS files and detects violations of a defined set of coding standards.",
+            "homepage": "http://www.squizlabs.com/php-codesniffer",
+            "keywords": [
+                "phpcs",
+                "standards"
+            ],
+            "time": "2017-07-18T01:12:32+00:00"
         },
         {
             "name": "symfony/yaml",
