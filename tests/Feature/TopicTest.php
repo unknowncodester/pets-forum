@@ -4,7 +4,6 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 
-
 class TopicTest extends TestCase
 {
     /**
@@ -44,4 +43,3 @@ class TopicTest extends TestCase
         $response->assertJsonStructure(['data' => $expected]);
     }
 }
-

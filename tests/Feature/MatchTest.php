@@ -73,4 +73,3 @@ class MatchTest extends TestCase
         $response->assertStatus(200);
     }
 }
-

@@ -34,7 +34,6 @@ class MatchesTableSeeder extends Seeder
                     "away_team_goals" => 0,
                     "date" => "2017-08-21"
                 ]
-            ]
-        );
+            ]);
     }
 }

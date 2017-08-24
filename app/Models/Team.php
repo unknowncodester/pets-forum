@@ -33,14 +33,16 @@ class Team extends Model
         return $awayFixtures;
     }
 
-    public static function allMatches($teamId) {
+    public static function allMatches($teamId)
+    {
         return [
             "home_matches" => self::homeMatches($teamId),
             "away_matches" => self::awayMatches($teamId)
         ];
     }
 
-    public static function getMatch($teamId, $matchId) {
+    public static function getMatch($teamId, $matchId)
+    {
 
         $match = DB::table('matches')
             ->join('teams as home', 'home.id', '=', 'matches.home_team_id')
@@ -53,6 +55,5 @@ class Team extends Model
             })->get();
 
         return $match;
-
     }
 }

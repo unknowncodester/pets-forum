@@ -4,7 +4,6 @@ namespace App\Library;
 
 use Carbon\Carbon;
 
-
 class ImportMatches
 {
     protected $readLocation;

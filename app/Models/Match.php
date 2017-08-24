@@ -16,7 +16,14 @@ class Match extends Model
         $match = DB::table('matches')
             ->join('teams as home', 'home.id', '=', 'matches.home_team_id')
             ->join('teams as away', 'away.id', '=', 'matches.away_team_id')
-            ->select('matches.id', 'home_team_id', 'away_team_id', 'home.name as home_team', 'away.name as away_team', 'matches.date')
+            ->select(
+                'matches.id',
+                'home_team_id',
+                'away_team_id',
+                'home.name as home_team',
+                'away.name as away_team',
+                'matches.date'
+            )
             ->where('matches.id', $id)
             ->get()
             ->first();
@@ -30,9 +37,18 @@ class Match extends Model
         $matches = DB::table('matches')
             ->join('teams as home', 'home.id', '=', 'matches.home_team_id')
             ->join('teams as away', 'away.id', '=', 'matches.away_team_id')
-            ->select('matches.id', 'home_team_id', 'away_team_id', 'home.name as home_team', 'away.name as away_team', 'matches.date', 'matches.home_team_goals', 'matches.away_team_goals');
+            ->select(
+                'matches.id',
+                'home_team_id',
+                'away_team_id',
+                'home.name as home_team',
+                'away.name as away_team',
+                'matches.date',
+                'matches.home_team_goals',
+                'matches.away_team_goals'
+            );
 
-        if($date && $duration){
+        if ($date && $duration) {
             $matches->where('date', '>=', Carbon::createFromFormat('Y-m-d', $date))
                 ->where('date', '<=', Carbon::createFromFormat('Y-m-d', $date)->addDays($duration));
         }

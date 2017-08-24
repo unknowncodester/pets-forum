@@ -140,4 +140,3 @@ class TeamTest extends TestCase
         ];
     }
 }
-
