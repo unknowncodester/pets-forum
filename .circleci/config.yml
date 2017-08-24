@@ -14,10 +14,6 @@ jobs:
     steps:
       - checkout
 
-      - run: service mysql start
-
-      - run: mysql -e "CREATE DATABASE test;"
-
       # Download and cache dependencies
       - restore_cache:
           keys:
@@ -32,5 +28,9 @@ jobs:
             - ./vendor
           key: v1-dependencies-{{ checksum "composer.json" }}
 
+      - run: php artisan migrate:rollback && php artisan migrate --seed
+
       # run tests!
       - run: vendor/bin/phpunit
+
+      - run: ./vendor/bin/phpcs -p app tests --standard=psr2
