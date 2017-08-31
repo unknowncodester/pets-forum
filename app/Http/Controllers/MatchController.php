@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Validator;
-use DB;
 use App\Models\Match;
 
 class MatchController extends Controller
@@ -12,9 +10,11 @@ class MatchController extends Controller
     public function index(Request $request)
     {
         $date = $request->input('date');
-        $duration = $request->input('duration');
+        $timeFrame = $request->input('timeframe');
 
-        $fixtures = Match::getAll($date, $duration);
+        $fixtures = Match::timeFrame($timeFrame, $date)
+            ->with(['homeTeam', 'awayTeam'])
+            ->get();
 
         return response()
             ->json(['data' => $fixtures], 200);
@@ -22,7 +22,7 @@ class MatchController extends Controller
 
     public function show($id)
     {
-        $fixture = Match::getOne($id);
+        $fixture = Match::with(['homeTeam', 'awayTeam'])->find($id);
 
         return response()
             ->json(['data' => $fixture], 200);

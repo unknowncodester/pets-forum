@@ -39,9 +39,9 @@ class TeamController extends Controller
                 ->json($validator->errors()->all(), 400);
         }
 
-        $flight = Team::create($request->all());
+        $team = Team::create($request->all());
 
         return response()
-            ->json(['data' => $flight], 201);
+            ->json(['data' => $team], 201);
     }
 }

@@ -36,11 +36,20 @@ class MatchTest extends TestCase
     public function canGetAMatch($id, $homeTeam, $awayTeam)
     {
         $response = $this->json('get', '/matches/'.$id);
-        $response->assertJson([
+        $response->assertJsonStructure([
             'data' => [
-                'id' => $id,
-                'home_team' => $homeTeam,
-                'away_team' => $awayTeam
+                'id',
+                'home_team_id',
+                'home_team_goals',
+                'away_team_id',
+                'away_team_goals',
+                'date',
+                'home_team' => [
+                    'name'
+                ],
+                'away_team' => [
+                    'name'
+                ],
             ]
         ]);
     }
@@ -62,14 +71,5 @@ class MatchTest extends TestCase
                 "away_team" => "Brighton & Hove Albion"
             ]
         ];
-    }
-
-    /**
-     * @test
-     */
-    public function canGetMatchesBetweenATimePeriod()
-    {
-        $response = $this->json('get', '/matches?date=2017-08-14&duration=10');
-        $response->assertStatus(200);
     }
 }

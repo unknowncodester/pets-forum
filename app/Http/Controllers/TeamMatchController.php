@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Validator;
-use DB;
 use App\Models\Team;
 
 class TeamMatchController extends Controller
