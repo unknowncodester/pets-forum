@@ -10,36 +10,14 @@ class Team extends Model
     protected $fillable = ['name'];
     protected $hidden = ['created_at', 'updated_at'];
 
-    public static function homeMatches($teamId)
+    public function homeMatches()
     {
-        $homeMatches = DB::table('matches')
-            ->join('teams as home', 'home.id', '=', 'matches.home_team_id')
-            ->join('teams as away', 'away.id', '=', 'matches.away_team_id')
-            ->select('matches.id', 'home.name as home_team', 'away.name as away_team', 'matches.date')
-            ->where('home_team_id', $teamId)
-            ->get();
-
-        return $homeMatches;
+        return $this->hasMany(Match::class, 'home_team_id', 'id');
     }
 
-    public static function awayMatches($teamId)
+    public function awayMatches()
     {
-        $awayFixtures = DB::table('matches')
-            ->join('teams as home', 'home.id', '=', 'matches.home_team_id')
-            ->join('teams as away', 'away.id', '=', 'matches.away_team_id')
-            ->select('matches.id', 'home.name as home_team', 'away.name as away_team', 'matches.date')
-            ->where('away_team_id', $teamId)
-            ->get();
-
-        return $awayFixtures;
-    }
-
-    public static function allMatches($teamId)
-    {
-        return [
-            "home_matches" => self::homeMatches($teamId),
-            "away_matches" => self::awayMatches($teamId)
-        ];
+        return $this->hasMany(Match::class, 'away_team_id', 'id');
     }
 
     public static function getMatch($teamId, $matchId)

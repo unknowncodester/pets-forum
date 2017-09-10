@@ -8,7 +8,9 @@ class TeamMatchController extends Controller
 {
     public function index($teamId)
     {
-        $fixtures = Team::allMatches($teamId);
+        $fixtures = Team::with(['homeMatches','awayMatches'])
+            ->where('id', $teamId)
+            ->get();
 
         return response()
             ->json(['data' => $fixtures], 200);

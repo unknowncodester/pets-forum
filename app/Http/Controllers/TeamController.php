@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Cache;
-use Validator;
 use Illuminate\Http\Request;
 use App\Models\Team;
 
