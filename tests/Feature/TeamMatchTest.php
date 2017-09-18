@@ -22,19 +22,25 @@ class TeamMatchTest extends TestCase
     {
         $expected = [
             'data' => [
+                'id',
+                'name',
                 'home_matches' => [
                     [
                         'id',
-                        'home_team',
-                        'away_team',
+                        'home_team_id',
+                        'home_team_goals',
+                        'away_team_id',
+                        'away_team_goals',
                         'date'
                     ]
                 ],
                 'away_matches' => [
                     [
                         'id',
-                        'home_team',
-                        'away_team',
+                        'home_team_id',
+                        'home_team_goals',
+                        'away_team_id',
+                        'away_team_goals',
                         'date'
                     ]
                 ]

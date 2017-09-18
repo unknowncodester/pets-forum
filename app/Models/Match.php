@@ -30,4 +30,16 @@ class Match extends Model
 
         return $query;
     }
+
+    /**
+     * Get the match date
+     * (uses eloquent mutations to reformat the date)
+     *
+     * @param  string  $value
+     * @return string
+     */
+    public function getDateAttribute($value)
+    {
+        return Carbon::createFromFormat('Y-m-d H:i:s', $value)->format('d-m-y H:i');
+    }
 }
