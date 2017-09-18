@@ -8,19 +8,19 @@ class TeamMatchController extends Controller
 {
     public function index($teamId)
     {
-        $fixtures = Team::with(['homeMatches','awayMatches'])
+        $matches = Team::with(['homeMatches','awayMatches'])
             ->where('id', $teamId)
             ->get();
 
         return response()
-            ->json(['data' => $fixtures], 200);
+            ->json(['data' => $matches], 200);
     }
 
-    public function show($teamId, $fixtureId)
+    public function show($teamId, $matchId)
     {
-        $fixture = Team::getMatch($teamId, $fixtureId);
+        $match = Team::getMatch($teamId, $matchId);
 
         return response()
-            ->json(['data' => $fixture], 200);
+            ->json(['data' => $match], 200);
     }
 }

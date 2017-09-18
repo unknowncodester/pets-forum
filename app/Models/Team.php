@@ -22,7 +22,6 @@ class Team extends Model
 
     public static function getMatch($teamId, $matchId)
     {
-
         $match = DB::table('matches')
             ->join('teams as home', 'home.id', '=', 'matches.home_team_id')
             ->join('teams as away', 'away.id', '=', 'matches.away_team_id')
