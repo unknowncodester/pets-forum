@@ -15,8 +15,8 @@ class LeagueTable
             ->select(
                 DB::raw(
                     'teams.name,
-                    SUM(if(teams.id = matches.home_team_id
-                        OR teams.id = matches.away_team_id,1,0)) as games,
+                    SUM(if(matches.home_team_goals IS NOT NULL AND matches.away_team_goals IS NOT NULL
+                     AND (teams.id = matches.home_team_id OR teams.id = matches.away_team_id),1,0)) as games,
                     SUM(if(teams.id = matches.away_team_id
                         AND matches.away_team_goals > matches.home_team_goals,1,0)) 
                     + SUM(if(teams.id = matches.home_team_id
