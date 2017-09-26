@@ -39,8 +39,9 @@ class ImportMatches extends Command
     public function handle()
     {
         $importMatches = new \App\Library\ImportMatches();
-        $importMatches->setReadLocation('http://api.football-data.org/v1/competitions/445/fixtures');
+        $importMatches->setReadLocation(env('APP_IMPORT_MATCHES_SOURCE'));
         $matches = $importMatches->parse();
+        Match::truncate();
         Match::insert($matches);
     }
 }
