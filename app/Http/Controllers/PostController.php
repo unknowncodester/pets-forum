@@ -11,7 +11,7 @@ class PostController extends Controller
 {
     public function index(Request $request)
     {
-        $posts = Post::all();
+        $posts = Post::with(['user', 'topic'])->get();
 
         return response()
             ->json(['data' => $posts], 200);
@@ -19,7 +19,7 @@ class PostController extends Controller
 
     public function show($id)
     {
-        $post = Post::find($id);
+        $post = Post::with(['user', 'topic'])->find($id);
 
         return response()
             ->json(['data' => $post], 200);
