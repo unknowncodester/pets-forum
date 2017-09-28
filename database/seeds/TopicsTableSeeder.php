@@ -14,8 +14,18 @@ class TopicsTableSeeder extends Seeder
     {
         Topic::insert(
             [
-                "id" => 1,
-                "name" => 'Best Matches'
+                [
+                    "id" => 1,
+                    "name" => 'Best Matches'
+                ],
+                [
+                    "id" => 2,
+                    "name" => 'Lukaku vs Aguero'
+                ],
+                [
+                    "id" => 3,
+                    "name" => 'Klopps counter pressing'
+                ]
             ]
         );
     }

@@ -14,12 +14,36 @@ class UsersTableSeeder extends Seeder
     {
         User::insert(
             [
-                "id" => 1,
-                "name" => 'fooUser',
-                "email" => "foo@bar.com",
-                'api_token' => str_random(60),
-                'password' => bcrypt('bazooka')
+                [
+                    "id" => 1,
+                    "name" => 'bluenose',
+                    "email" => "blue@nose.com",
+                    'api_token' => str_random(60),
+                    'password' => bcrypt('bazooka')
+                ],
+                [
+                    "id" => 2,
+                    "name" => 'adminFrank',
+                    "email" => "admin@plz.com",
+                    'api_token' => str_random(60),
+                    'password' => bcrypt('bazooka')
+                ],
+                [
+                    "id" => 3,
+                    "name" => 'jo1sik',
+                    "email" => "jo1sik@gmail.com",
+                    'api_token' => str_random(60),
+                    'password' => bcrypt('bazooka')
+                ],
+                [
+                    "id" => 4,
+                    "name" => 'aerotype',
+                    "email" => "aerotype@rocketmail.com",
+                    'api_token' => str_random(60),
+                    'password' => bcrypt('bazooka')
+                ],
             ]
+
         );
     }
 }
