@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Manager;
+use App\Stadium;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
@@ -18,6 +20,16 @@ class Team extends Model
     public function awayMatches()
     {
         return $this->hasMany(Match::class, 'away_team_id', 'id');
+    }
+
+    public function manager()
+    {
+        return $this->hasOne(Manager::class, 'id', 'manager_id');
+    }
+
+    public function stadium()
+    {
+        return $this->hasOne(Stadium::class, 'id', 'stadium_id');
     }
 
     public static function getMatch($teamId, $matchId)

@@ -11,7 +11,7 @@ class TeamController extends Controller
 
     public function index()
     {
-        $teams = Team::all();
+        $teams = Team::with(['stadium', 'manager'])->get();
 
         return response()
             ->json(['data' => $teams], 200);
@@ -19,7 +19,7 @@ class TeamController extends Controller
 
     public function show($id)
     {
-        $team = Team::find($id);
+        $team = Team::with(['stadium', 'manager'])->find($id);
 
         return response()
             ->json(['data' => $team], 200);
