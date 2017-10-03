@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 class Team extends Model
 {
     protected $fillable = ['name'];
-    protected $hidden = ['created_at', 'updated_at'];
+    protected $hidden = ['created_at', 'updated_at', 'manager_id', 'stadium_id'];
 
     public function homeMatches()
     {
