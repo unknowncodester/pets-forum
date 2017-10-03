@@ -16,83 +16,123 @@ class TeamsTableSeeder extends Seeder
             [
                 [
                     "id" => 1,
-                    "name"=> "Arsenal"
+                    "name"=> "Arsenal",
+                    'stadium_id' => 1,
+                    'manager_id' => 1,
                 ],
                 [
                     "id" => 2,
-                    "name"=> "Bournemouth"
+                    "name"=> "Bournemouth",
+                    'stadium_id' => 1,
+                    'manager_id' => 1,
                 ],
                 [
                     "id" => 3,
-                    "name"=> "Brighton & Hove Albion"
+                    "name"=> "Brighton & Hove Albion",
+                    'stadium_id' => 1,
+                    'manager_id' => 1,
                 ],
                 [
                     "id" => 4,
-                    "name"=> "Burnley"
+                    "name"=> "Burnley",
+                    'stadium_id' => 1,
+                    'manager_id' => 1,
                 ],
                 [
                     "id" => 5,
-                    "name"=> "Chelsea"
+                    "name"=> "Chelsea",
+                    'stadium_id' => 1,
+                    'manager_id' => 1,
                 ],
                 [
                     "id" => 6,
-                    "name"=> "Crystal Palace"
+                    "name"=> "Crystal Palace",
+                    'stadium_id' => 1,
+                    'manager_id' => 1,
                 ],
                 [
                     "id" => 7,
-                    "name"=> "Everton"
+                    "name"=> "Everton",
+                    'stadium_id' => 1,
+                    'manager_id' => 1,
                 ],
                 [
                     "id" => 8,
-                    "name"=> "Huddersfield Town"
+                    "name"=> "Huddersfield Town",
+                    'stadium_id' => 1,
+                    'manager_id' => 1,
                 ],
                 [
                     "id" => 9,
-                    "name"=> "Leicester City"
+                    "name"=> "Leicester City",
+                    'stadium_id' => 1,
+                    'manager_id' => 1,
                 ],
                 [
                     "id" => 10,
-                    "name"=> "Liverpool"
+                    "name"=> "Liverpool",
+                    'stadium_id' => 1,
+                    'manager_id' => 1,
                 ],
                 [
                     "id" => 11,
-                    "name"=> "Manchester City"
+                    "name"=> "Manchester City",
+                    'stadium_id' => 1,
+                    'manager_id' => 1,
                 ],
                 [
                     "id" => 12,
-                    "name"=> "Manchester United"
+                    "name"=> "Manchester United",
+                    'stadium_id' => 1,
+                    'manager_id' => 1,
                 ],
                 [
                     "id" => 13,
-                    "name"=> "Newcastle United"
+                    "name"=> "Newcastle United",
+                    'stadium_id' => 1,
+                    'manager_id' => 1,
                 ],
                 [
                     "id" => 14,
-                    "name"=> "Southampton"
+                    "name"=> "Southampton",
+                    'stadium_id' => 1,
+                    'manager_id' => 1,
                 ],
                 [
                     "id" => 15,
-                    "name"=> "Stoke City"
+                    "name"=> "Stoke City",
+                    'stadium_id' => 1,
+                    'manager_id' => 1,
                 ],
                 [
                     "id" => 16,
-                    "name"=> "Swansea City"
+                    "name"=> "Swansea City",
+                    'stadium_id' => 1,
+                    'manager_id' => 1,
                 ],
                 [
                     "id" => 17,
-                    "name"=> "Tottenham Hotspur"
+                    "name"=> "Tottenham Hotspur",
+                    'stadium_id' => 1,
+                    'manager_id' => 1,
                 ],
                 [
                     "id" => 18,
-                    "name"=> "Watford"
+                    "name"=> "Watford",
+                    'stadium_id' => 1,
+                    'manager_id' => 1,
                 ],
                 [
                     "id" => 19,
-                    "name"=> "West Bromwich Albion"
+                    "name"=> "West Bromwich Albion",
+                    'stadium_id' => 1,
+                    'manager_id' => 1,
                 ],
                 [
                     "id" => 20,
-                    "name"=> "West Ham United"
+                    "name"=> "West Ham United",
+                    'stadium_id' => 1,
+                    'manager_id' => 1,
                 ],
             ]
         );
