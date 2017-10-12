@@ -21,7 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 // api routes
 Route::group(['prefix' => 'api'], function () {
 
-    Route::post('posts', 'PostController@store')->middleware('isAdmin');
+    Route::post('posts', 'PostController@store')->middleware('role:admin', 'auth');
 
     // team
     Route::get('teams', 'TeamController@index');
@@ -48,3 +48,6 @@ Route::group(['prefix' => 'api'], function () {
     Route::get('league', 'LeagueTableController@index');
 
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

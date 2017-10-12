@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
+    protected $fillable = ['title', 'body', 'topic_id', 'user_id'];
+
     /**
      * Get when the post was created at.
      *
