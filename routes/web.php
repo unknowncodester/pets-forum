@@ -21,9 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 // api routes
 Route::group(['prefix' => 'api'], function () {
 
-    Route::group(['middleware' => 'auth:api'], function () {
-        Route::post('posts', 'PostController@store');
-    });
+    Route::post('posts', 'PostController@store')->middleware('isAdmin');
 
     // team
     Route::get('teams', 'TeamController@index');

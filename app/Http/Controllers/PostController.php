@@ -27,24 +27,22 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'title' => 'required|String|max:255',
-            'body' => 'required|String|max:255',
-            'user_id' => 'required|int',
-            'topic_id' => 'required|int'
-        ]);
+//        $validator = Validator::make($request->all(), [
+//            'title' => 'required|String|max:255',
+//            'body' => 'required|String|max:255',
+//            'user_id' => 'required|int',
+//            'topic_id' => 'required|int'
+//        ]);
 
-        if ($validator->fails()) {
+//        if ($validator->fails()) {
+//            return response()
+//                ->json($validator->errors()->all(), 400);
+//        }
+
             return response()
-                ->json($validator->errors()->all(), 400);
-        }
+                ->json('unauthorised.', 403);
 
-        if (Gate::denies('post', $request->input('user_id'))) {
-            return response()
-                ->json($validator->errors()->all(), 403);
-        }
-
-        return response()
-            ->json(['data' => Post::create($request->all())], 201);
+//        return response()
+//            ->json(['data' => Post::create($request->all())], 201);
     }
 }

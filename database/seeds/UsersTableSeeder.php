@@ -16,6 +16,7 @@ class UsersTableSeeder extends Seeder
             [
                 [
                     "id" => 1,
+                    "role_id" => 1,
                     "name" => 'bluenose',
                     "email" => "blue@nose.com",
                     'api_token' => str_random(60),
@@ -23,6 +24,7 @@ class UsersTableSeeder extends Seeder
                 ],
                 [
                     "id" => 2,
+                    "role_id" => 2,
                     "name" => 'adminFrank',
                     "email" => "admin@plz.com",
                     'api_token' => str_random(60),
@@ -30,6 +32,7 @@ class UsersTableSeeder extends Seeder
                 ],
                 [
                     "id" => 3,
+                    "role_id" => 1,
                     "name" => 'jo1sik',
                     "email" => "jo1sik@gmail.com",
                     'api_token' => str_random(60),
@@ -37,6 +40,7 @@ class UsersTableSeeder extends Seeder
                 ],
                 [
                     "id" => 4,
+                    "role_id" => 1,
                     "name" => 'aerotype',
                     "email" => "aerotype@rocketmail.com",
                     'api_token' => str_random(60),
